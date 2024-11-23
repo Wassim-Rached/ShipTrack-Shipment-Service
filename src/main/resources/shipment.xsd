@@ -1,52 +1,57 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://example.com/soap"
-           xmlns="http://example.com/soap"
+           xmlns:tns="http://www.dsi301.com/xml/shipment"
+           targetNamespace="http://www.dsi301.com/xml/shipment"
            elementFormDefault="qualified">
 
-    <xs:element name="CreateShipmentRequest">
+    <!-- Shipment Request -->
+    <xs:element name="ShipmentRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="streetAddress" type="xs:string"/>
+                <xs:element name="street_address" type="xs:string"/>
                 <xs:element name="city" type="xs:string"/>
-                <xs:element name="postalCode" type="xs:string"/>
-                <xs:element name="estimatedDeliveryDate" type="xs:string"/>
-                <xs:element name="estimatedPickupTime" type="xs:string"/>
-                <xs:element name="carrierId" type="xs:int"/>
-                <xs:element name="trackingNumber" type="xs:string"/>
+                <xs:element name="postal_code" type="xs:string"/>
+<!--                <xs:element name="estimated_delivery_date" type="xs:dateTime"/>-->
+<!--                <xs:element name="estimated_pickup_time" type="xs:dateTime"/>-->
+<!--                <xs:element name="tracking_number" type="xs:string"/>-->
+<!--                <xs:element name="carrier_id" type="xs:int"/>-->
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="CreateShipmentResponse">
+    <!-- Shipment Details Request -->
+    <xs:element name="ShipmentDetailsRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="shipmentId" type="xs:int"/>
-                <xs:element name="trackingNumber" type="xs:string"/>
-                <xs:element name="status" type="xs:string"/>
+                <xs:element name="tracking_number" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="GetShipmentDetailsRequest">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="trackingNumber" type="xs:string"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
+    <!-- Shipment Details Response -->
     <xs:element name="ShipmentDetailsResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="shipmentId" type="xs:int"/>
-                <xs:element name="streetAddress" type="xs:string"/>
+                <xs:element name="shipment_id" type="xs:string"/>
+                <xs:element name="street_address" type="xs:string"/>
                 <xs:element name="city" type="xs:string"/>
-                <xs:element name="postalCode" type="xs:string"/>
-                <xs:element name="estimatedDeliveryDate" type="xs:string"/>
-                <xs:element name="estimatedPickupTime" type="xs:string"/>
-                <xs:element name="trackingNumber" type="xs:string"/>
+                <xs:element name="postal_code" type="xs:string"/>
+                <xs:element name="estimated_delivery_date" type="xs:string"/>
+                <xs:element name="estimated_pickup_time" type="xs:string"/>
+                <xs:element name="tracking_number" type="xs:string"/>
                 <xs:element name="status" type="xs:string"/>
-                <xs:element name="carrierId" type="xs:int"/>
+                <xs:element name="carrier_id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Shipment Response -->
+    <xs:element name="ShipmentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="shipment_id" type="xs:int"/>
+                <xs:element name="tracking_number" type="xs:string"/>
+                <xs:element name="status" type="xs:string"/>
+<!--                <xs:element name="updated_at" type="xs:dateTime"/>-->
             </xs:sequence>
         </xs:complexType>
     </xs:element>

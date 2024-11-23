@@ -8,3 +8,10 @@ spring:
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+#logging.level.org.springframework.ws=DEBUG
+#logging.level.org.springframework.ws.server.endpoint=TRACE
+
+logging:
+  level:
+    org.springframework.ws: DEBUG
+    org.springframework.ws.server.endpoint: TRACE
