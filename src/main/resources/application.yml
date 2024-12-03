@@ -15,3 +15,5 @@ logging:
   level:
     org.springframework.ws: DEBUG
     org.springframework.ws.server.endpoint: TRACE
+server:
+  port: 7000
